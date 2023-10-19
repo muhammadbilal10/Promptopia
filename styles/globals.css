@@ -1,0 +1,153 @@
+/* global.css */
+
+/* Import MUI's Roboto font */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap");
+
+/* Apply Roboto font to the entire application */
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Apply box-sizing rule to all elements */
+* {
+  box-sizing: inherit;
+}
+
+/* Set root font size for better responsiveness */
+html {
+  font-size: 16px;
+}
+
+.main {
+  width: 100vw;
+  min-height: 100vh;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  padding: 120px 24px 160px 24px;
+  pointer-events: none;
+}
+
+.main:before {
+  background: radial-gradient(circle, rgba(2, 0, 36, 0) 0, #fafafa 100%);
+  position: absolute;
+  content: "";
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  top: 0;
+}
+
+.main:after {
+  content: "";
+  background-image: url("/assets/images/grid.svg");
+  z-index: 1;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  opacity: 0.4;
+  filter: invert(1);
+}
+
+.gradient {
+  height: fit-content;
+  z-index: 3;
+  width: 100%;
+  max-width: 640px;
+  background-image: radial-gradient(
+      at 27% 37%,
+      hsla(215, 98%, 61%, 1) 0px,
+      transparent 0%
+    ),
+    radial-gradient(at 97% 21%, hsla(125, 98%, 72%, 1) 0px, transparent 50%),
+    radial-gradient(at 52% 99%, hsla(354, 98%, 61%, 1) 0px, transparent 50%),
+    radial-gradient(at 10% 29%, hsla(256, 96%, 67%, 1) 0px, transparent 50%),
+    radial-gradient(at 97% 96%, hsla(38, 60%, 74%, 1) 0px, transparent 50%),
+    radial-gradient(at 33% 50%, hsla(222, 67%, 73%, 1) 0px, transparent 50%),
+    radial-gradient(at 79% 53%, hsla(343, 68%, 79%, 1) 0px, transparent 50%);
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  filter: blur(100px) saturate(150%);
+  top: 80px;
+  opacity: 0.15;
+}
+
+@media screen and (max-width: 640px) {
+  .main {
+    padding: 0;
+  }
+}
+
+.app {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 100rem; /* Equivalent to max-w-7xl in Tailwind */
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 1.5rem; /* Equivalent to sm:px-16 in Tailwind */
+  padding-left: 1.5rem; /* Equivalent to sm:px-16 in Tailwind */
+  padding-right: 0.75rem; /* Equivalent to px-6 in Tailwind */
+  padding-left: 0.75rem; /* Equivalent to px-6 in Tailwind */
+}
+
+/* Apply custom styles for MUI components */
+
+.MuiButton-root {
+  text-transform: none; /* Prevent automatic text capitalization */
+  border-radius: 8px; /* Custom border radius */
+  font-weight: 600; /* Custom font weight */
+  /* Add more custom styles as needed */
+}
+
+/* Example: Custom styles for text fields */
+.MuiTextField-root {
+  width: 100%; /* Make text fields take up 100% of the parent container */
+  margin-bottom: 16px; /* Add bottom margin for spacing between fields */
+  /* Add more custom styles as needed */
+}
+
+.MuiAppBar-root {
+  background-color: #2196f3; /* Custom background color */
+  color: white; /* Custom text color */
+}
+
+.Mui-custom-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.orange-gradient {
+  background-image: linear-gradient(to right, #ffc300, #ff9800, #ff5722);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+.blue_gradient {
+  background-image: linear-gradient(to right, #3182ce, #48bb78);
+  background-clip: text;
+  color: transparent;
+}
+
+/* styles MUI component */
+.MuiMenu-paper {
+  width: 200px;
+}
+/* Global styles for responsive layout */
+@media (max-width: 600px) {
+  /* Add responsive styles for smaller screens */
+}
+
+@media (min-width: 960px) {
+  /* Add responsive styles for larger screens */
+}
